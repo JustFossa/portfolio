@@ -6,7 +6,7 @@ const projects = [
     },
     {
         "name": "Lunch Finder",
-        "description" : "School project for finding pics of lunch... design definitely inspired by discord :)",
+        "description" : "School project for finding pics of lunch... design definitely not inspired by discord :)",
         "url":"https://lunchfinder.justfossa.xyz"
     }
 
