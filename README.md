@@ -80,6 +80,25 @@ export const projects: Project[] = [
 ];
 ```
 
+## Languages (i18n)
+
+The site is **Czech-first** with an English option, toggled by the CS / EN
+switch in the navbar. The choice is saved in the browser.
+
+- Locale config lives in `src/i18n/config.ts` (default is `cs`).
+- UI chrome strings (nav, buttons, section titles) are in `src/i18n/ui.ts`.
+- Page content is bilingual right in the data files: any translatable field is an
+  object `{ cs: "…", en: "…" }`. Edit both languages when you change copy, e.g.:
+
+  ```ts
+  tagline: {
+    cs: "Navrhuji a dodávám software od začátku do konce.",
+    en: "I design and ship software, end to end.",
+  }
+  ```
+
+Language-neutral values (names, tech, URLs, dates as written) stay plain strings.
+
 ## Deploying
 
 The easiest path is [Vercel](https://vercel.com): push this folder to a GitHub

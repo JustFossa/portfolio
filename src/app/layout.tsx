@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Fraunces, Newsreader, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { LanguageProvider } from "@/i18n/LanguageProvider";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { site } from "@/data/site";
+import { defaultLocale } from "@/i18n/config";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -22,14 +25,17 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+// Czech-first metadata (default locale).
 export const metadata: Metadata = {
-  title: `${site.name} — ${site.role}`,
-  description: site.metaDescription,
+  title: site.meta.title.cs,
+  description: site.meta.description.cs,
   authors: [{ name: site.name }],
   openGraph: {
-    title: `${site.name} — ${site.role}`,
-    description: site.metaDescription,
+    title: site.meta.title.cs,
+    description: site.meta.description.cs,
     type: "website",
+    locale: "cs_CZ",
+    alternateLocale: ["en_US"],
   },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
@@ -43,12 +49,17 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
+      lang={defaultLocale}
       suppressHydrationWarning
       className={`${fraunces.variable} ${newsreader.variable} ${jetbrainsMono.variable}`}
     >
       <body className="font-body antialiased">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <ScrollProgress />
+            {children}
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

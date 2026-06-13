@@ -1,7 +1,13 @@
+"use client";
+
 import { ArrowUp } from "lucide-react";
 import { site } from "@/data/site";
+import { useLanguage } from "@/i18n/LanguageProvider";
+import { ui } from "@/i18n/ui";
 
 export function Footer() {
+  const { locale } = useLanguage();
+  const strings = ui[locale];
   const year = new Date().getFullYear();
 
   return (
@@ -11,13 +17,13 @@ export function Footer() {
           © {year} {site.name} · {site.handle}
         </p>
         <p className="font-mono text-xs uppercase tracking-widest text-subtle">
-          Built with Next.js &amp; Tailwind CSS
+          {strings.footer.builtWith}
         </p>
         <a
           href="#top"
           className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted transition-colors hover:text-foreground"
         >
-          Back to top
+          {strings.footer.backToTop}
           <ArrowUp className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
         </a>
       </div>

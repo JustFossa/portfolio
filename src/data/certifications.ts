@@ -1,31 +1,39 @@
+import type { Localized } from "@/i18n/config";
+
 export interface Certification {
-  name: string;
+  name: string; // proper nouns — kept as-is
   issuer: string;
-  date: string;
-  note?: string;
+  date: Localized;
+  note?: Localized;
 }
 
 export const certifications: Certification[] = [
   {
     name: "Google Cybersecurity",
     issuer: "Google",
-    date: "2026",
-    note: "Foundations of Cybersecurity · Networks & Network Security · Manage Security Risks · Linux & SQL",
+    date: { cs: "2026", en: "2026" },
+    note: {
+      cs: "Základy kybernetické bezpečnosti · Sítě a jejich zabezpečení · Řízení bezpečnostních rizik · Linux a SQL",
+      en: "Foundations of Cybersecurity · Networks & Network Security · Manage Security Risks · Linux & SQL",
+    },
   },
   {
     name: "Certified Agentic AI Expert™",
     issuer: "Blockchain Council",
-    date: "Oct 2025",
-    note: "Artificial Intelligence (AI)",
+    date: { cs: "Říj 2025", en: "Oct 2025" },
+    note: {
+      cs: "Umělá inteligence (AI)",
+      en: "Artificial Intelligence (AI)",
+    },
   },
   {
     name: "ISC2 Candidate",
     issuer: "ISC2",
-    date: "Jan 2026 — Jan 2027",
+    date: { cs: "Led 2026 — Led 2027", en: "Jan 2026 — Jan 2027" },
   },
   {
     name: "Soutěž & Podnikej",
     issuer: "BeNextOne",
-    date: "Mar 2026",
+    date: { cs: "Bře 2026", en: "Mar 2026" },
   },
 ];

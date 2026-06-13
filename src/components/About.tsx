@@ -1,19 +1,28 @@
+"use client";
+
 import { site } from "@/data/site";
+import { useLanguage } from "@/i18n/LanguageProvider";
+import { ui } from "@/i18n/ui";
 import { Section } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 
 export function About() {
+  const { t, locale } = useLanguage();
+
   return (
-    <Section id="about" index="01" title="About">
+    <Section id="about" index="01" title={ui[locale].sections.about}>
       <div className="grid gap-12 md:grid-cols-[1fr_1.6fr] md:gap-16">
         <Reveal>
           <dl className="space-y-6">
-            {site.facts.map((fact) => (
-              <div key={fact.label} className="border-t border-border pt-3">
+            {site.facts.map((fact, i) => (
+              <div
+                key={i}
+                className="group border-t border-border pt-3 transition-colors hover:border-foreground"
+              >
                 <dt className="font-mono text-xs uppercase tracking-widest text-muted">
-                  {fact.label}
+                  {t(fact.label)}
                 </dt>
-                <dd className="mt-1 text-lg">{fact.value}</dd>
+                <dd className="mt-1 text-lg">{t(fact.value)}</dd>
               </div>
             ))}
           </dl>
@@ -30,7 +39,7 @@ export function About() {
                     : "text-lg"
                 }`}
               >
-                {paragraph}
+                {t(paragraph)}
               </p>
             ))}
           </div>

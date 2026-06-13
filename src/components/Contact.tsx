@@ -1,24 +1,29 @@
+"use client";
+
 import { ArrowUpRight } from "lucide-react";
 import { site } from "@/data/site";
+import { useLanguage } from "@/i18n/LanguageProvider";
+import { ui } from "@/i18n/ui";
 import { Section } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { SocialIcon } from "@/components/SocialIcon";
 import { WaveArt } from "@/components/AbstractArt";
 
 export function Contact() {
+  const { t, locale } = useLanguage();
+  const strings = ui[locale];
   const email = site.links.find((l) => l.icon === "mail");
 
   return (
-    <Section id="contact" index="05" title="Contact">
+    <Section id="contact" index="05" title={strings.sections.contact}>
       <div className="grid gap-12 md:grid-cols-[1.4fr_1fr] md:gap-16">
         <Reveal>
           <div>
             <p className="max-w-xl font-display text-3xl leading-tight tracking-tight md:text-5xl">
-              Let&apos;s build something worth shipping.
+              {strings.contact.heading}
             </p>
             <p className="mt-6 max-w-md leading-relaxed text-muted">
-              Have a project in mind, a role to fill, or just want to talk shop?
-              My inbox is always open.
+              {strings.contact.body}
             </p>
             {email && (
               <a
@@ -35,7 +40,7 @@ export function Contact() {
         <Reveal delay={120}>
           <ul className="border-t border-border">
             {site.links.map((link) => (
-              <li key={link.label}>
+              <li key={link.icon}>
                 <a
                   href={link.href}
                   target={link.href.startsWith("http") ? "_blank" : undefined}
@@ -46,14 +51,15 @@ export function Contact() {
                   }
                   className="group flex items-center justify-between gap-4 border-b border-border py-4 transition-colors hover:text-foreground"
                 >
-                  <span className="flex items-center gap-3">
+                  <span className="flex items-center gap-3 transition-transform duration-200 group-hover:translate-x-1">
                     <SocialIcon name={link.icon} className="h-4 w-4 text-muted" />
                     <span className="font-mono text-xs uppercase tracking-widest text-muted group-hover:text-foreground">
-                      {link.label}
+                      {t(link.label)}
                     </span>
                   </span>
-                  <span className="text-sm text-subtle group-hover:text-foreground">
+                  <span className="flex items-center gap-2 text-sm text-subtle group-hover:text-foreground">
                     {link.handle}
+                    <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-opacity group-hover:opacity-100" />
                   </span>
                 </a>
               </li>

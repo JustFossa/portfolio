@@ -1,10 +1,17 @@
+"use client";
+
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { site } from "@/data/site";
+import { useLanguage } from "@/i18n/LanguageProvider";
+import { ui } from "@/i18n/ui";
 import { SocialIcon } from "@/components/SocialIcon";
 import { Reveal } from "@/components/Reveal";
 import { OrbArt } from "@/components/AbstractArt";
 
 export function Hero() {
+  const { t, locale } = useLanguage();
+  const strings = ui[locale];
+
   return (
     <section
       id="top"
@@ -22,13 +29,13 @@ export function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-foreground opacity-40" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-foreground" />
             </span>
-            {site.availability}
+            {t(site.availability)}
           </div>
         </Reveal>
 
         <Reveal delay={80}>
           <p className="font-mono text-sm uppercase tracking-[0.25em] text-muted">
-            {site.role}
+            {t(site.role)}
           </p>
         </Reveal>
 
@@ -40,22 +47,24 @@ export function Hero() {
 
         <Reveal delay={220}>
           <p className="mt-8 max-w-2xl font-display text-2xl leading-snug text-foreground md:text-3xl">
-            {site.tagline}
+            {t(site.tagline)}
           </p>
         </Reveal>
 
         <Reveal delay={300}>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
-            {site.heroIntro}
+            {t(site.heroIntro)}
           </p>
         </Reveal>
 
         <Reveal delay={360}>
           <ul className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-xs uppercase tracking-widest text-muted">
             {site.valueProps.map((prop, i) => (
-              <li key={prop} className="flex items-center gap-3">
+              <li key={i} className="flex items-center gap-3">
                 {i > 0 && <span className="text-subtle">/</span>}
-                {prop}
+                <span className="transition-colors hover:text-foreground">
+                  {t(prop)}
+                </span>
               </li>
             ))}
           </ul>
@@ -65,16 +74,16 @@ export function Hero() {
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <a
               href="#projects"
-              className="group inline-flex items-center justify-center gap-2 bg-foreground px-6 py-3 font-mono text-xs uppercase tracking-widest text-background transition-opacity hover:opacity-85"
+              className="group inline-flex items-center justify-center gap-2 bg-foreground px-6 py-3 font-mono text-xs uppercase tracking-widest text-background transition-all hover:gap-3 hover:opacity-85"
             >
-              View work
+              {strings.hero.viewWork}
               <ArrowDownRight className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
             </a>
             <a
               href="#contact"
               className="group inline-flex items-center justify-center gap-2 border border-border px-6 py-3 font-mono text-xs uppercase tracking-widest transition-colors hover:bg-foreground hover:text-background"
             >
-              Get in touch
+              {strings.hero.getInTouch}
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </div>
@@ -84,14 +93,14 @@ export function Hero() {
           <div className="mt-12 flex items-center gap-5">
             {site.links.map((link) => (
               <a
-                key={link.label}
+                key={link.icon}
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={
                   link.href.startsWith("http") ? "noreferrer noopener" : undefined
                 }
-                aria-label={link.label}
-                className="text-muted transition-colors hover:text-foreground"
+                aria-label={t(link.label)}
+                className="text-muted transition-all duration-200 hover:-translate-y-0.5 hover:text-foreground"
               >
                 <SocialIcon name={link.icon} className="h-5 w-5" />
               </a>
