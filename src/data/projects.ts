@@ -2,39 +2,32 @@ export interface Project {
   name: string;
   description: string;
   tech: string[];
-  href?: string;
+  demo?: string; // live, deployed site
+  source?: string; // GitHub repository
 }
 
-// Projects are intentionally left empty for now.
-// When you're ready, add entries to the array below — the Projects section
-// will render them automatically. Your pinned GitHub repos are pre-filled
-// as ready-to-use examples; just uncomment the ones you want to show.
 export const projects: Project[] = [
-  // {
-  //   name: "swiftnote",
-  //   description: "Create and share self-destructing notes with ease.",
-  //   tech: ["TypeScript", "Next.js"],
-  //   href: "https://github.com/JustFossa/swiftnote",
-  // },
-  // {
-  //   name: "sponsor",
-  //   description:
-  //     "A simple, lightweight and inviting alternative to GitHub Sponsors.",
-  //   tech: ["TypeScript"],
-  //   href: "https://github.com/JustFossa/sponsor",
-  // },
-  // {
-  //   name: "sentinel",
-  //   description: "Security-focused tooling.",
-  //   tech: ["Python"],
-  //   href: "https://github.com/JustFossa/sentinel",
-  // },
-  // {
-  //   name: "justfossa.app",
-  //   description: "My own little corner of the internet.",
-  //   tech: ["TypeScript", "Next.js"],
-  //   href: "https://github.com/JustFossa/justfossa.app",
-  // },
+  {
+    name: "iptools",
+    description:
+      "A powerful toolkit for inspecting any IP address — geolocation, network and provider details, and more, in a clean and fast interface.",
+    tech: ["Next.js", "TypeScript", "Docker"],
+    source: "https://github.com/JustFossa/iptools",
+  },
+  {
+    name: "swiftnote",
+    description:
+      "Create and share self-destructing notes with ease — private by design, and gone the moment they've been read.",
+    tech: ["Next.js", "TypeScript", "Tailwind"],
+    source: "https://github.com/JustFossa/swiftnote",
+  },
+  {
+    name: "sponsor",
+    description:
+      "A simple, lightweight and inviting alternative to GitHub Sponsors for accepting support from your community.",
+    tech: ["Next.js", "TypeScript", "Tailwind"],
+    source: "https://github.com/JustFossa/sponsor",
+  },
 ];
 
 export const githubUrl = "https://github.com/justfossa";

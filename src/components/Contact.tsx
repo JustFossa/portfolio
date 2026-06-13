@@ -3,6 +3,7 @@ import { site } from "@/data/site";
 import { Section } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { SocialIcon } from "@/components/SocialIcon";
+import { WaveArt } from "@/components/AbstractArt";
 
 export function Contact() {
   const email = site.links.find((l) => l.icon === "mail");
@@ -59,6 +60,13 @@ export function Contact() {
             ))}
           </ul>
         </Reveal>
+      </div>
+
+      <div
+        aria-hidden
+        className="pointer-events-none mt-20 select-none text-foreground opacity-[0.12]"
+      >
+        <WaveArt className="h-20 w-full md:h-28" />
       </div>
     </Section>
   );

@@ -26,11 +26,14 @@ export const site = {
 	// Hero
 	tagline: "I design and ship software, end to end.",
 	heroIntro:
-		"Full-stack engineer focused on fast, reliable products — built with Next.js on the front, Go and Node on the back, and clean architecture all the way through.",
+		"I build fast, high-converting websites and web apps that turn visitors into customers — backed by clean, reliable engineering. Full-stack, from first pixel to production.",
+
+	// Short client-facing value props shown in the hero
+	valueProps: ["High-converting design", "Fast, SEO-ready builds", "Built to scale"],
 
 	// About — each string is its own paragraph
 	bio: [
-		"I'm Marek, a full-stack software engineer with more than five years spent building products from the first line of code to production. I care about software that is fast, maintainable, and genuinely pleasant to use.",
+		"I'm Marek, a full-stack software engineer with more than five years spent building products from the first line of code to production. I help businesses turn ideas into fast, high-converting websites and web apps — software that looks sharp, loads quickly, and actually drives results.",
 		"My work spans the whole stack: crafting interfaces in Next.js and React, designing APIs and services in Go and Node.js, and modeling data with PostgreSQL and Prisma. I'm equally comfortable owning architecture decisions and sweating the small details of a UI.",
 		"Today I lead engineering as CEO of Asuna Labs and build software at Ideacomp s.r.o. When I'm not shipping, I'm usually digging into something new — most recently security and agentic AI.",
 	],
