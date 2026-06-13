@@ -3,6 +3,7 @@ import { Fraunces, Newsreader, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { BackgroundArt } from "@/components/BackgroundArt";
 import { site } from "@/data/site";
 import { defaultLocale } from "@/i18n/config";
 import "./globals.css";
@@ -54,6 +55,7 @@ export default function RootLayout({
       className={`${fraunces.variable} ${newsreader.variable} ${jetbrainsMono.variable}`}
     >
       <body className="font-body antialiased">
+        <BackgroundArt />
         <ThemeProvider>
           <LanguageProvider>
             <ScrollProgress />

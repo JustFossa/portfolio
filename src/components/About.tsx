@@ -5,6 +5,7 @@ import { useLanguage } from "@/i18n/LanguageProvider";
 import { ui } from "@/i18n/ui";
 import { Section } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
+import { renderRich } from "@/lib/rich-text";
 
 export function About() {
   const { t, locale } = useLanguage();
@@ -39,7 +40,7 @@ export function About() {
                     : "text-lg"
                 }`}
               >
-                {t(paragraph)}
+                {renderRich(t(paragraph))}
               </p>
             ))}
           </div>

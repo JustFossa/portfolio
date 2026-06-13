@@ -6,7 +6,8 @@ import { useLanguage } from "@/i18n/LanguageProvider";
 import { ui } from "@/i18n/ui";
 import { SocialIcon } from "@/components/SocialIcon";
 import { Reveal } from "@/components/Reveal";
-import { OrbArt } from "@/components/AbstractArt";
+import { OrbArt, ScatterArt } from "@/components/AbstractArt";
+import { renderRich } from "@/lib/rich-text";
 
 export function Hero() {
   const { t, locale } = useLanguage();
@@ -20,6 +21,9 @@ export function Hero() {
       {/* Decorative abstract art */}
       <div className="pointer-events-none absolute right-0 top-1/2 hidden aspect-square w-[460px] max-w-[46vw] -translate-y-1/2 select-none text-foreground opacity-[0.22] dark:opacity-[0.32] lg:block">
         <OrbArt className="h-full w-full" />
+      </div>
+      <div className="pointer-events-none absolute bottom-12 left-0 hidden w-40 select-none text-foreground opacity-[0.3] md:block">
+        <ScatterArt className="h-auto w-full" />
       </div>
 
       <div className="relative z-10">
@@ -53,7 +57,7 @@ export function Hero() {
 
         <Reveal delay={300}>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
-            {t(site.heroIntro)}
+            {renderRich(t(site.heroIntro))}
           </p>
         </Reveal>
 

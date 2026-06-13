@@ -45,8 +45,8 @@ export const site = {
   } as Localized,
 
   heroIntro: {
-    cs: "Stavím rychlé weby a webové aplikace s vysokou konverzí, které mění návštěvníky v zákazníky — postavené na čisté a spolehlivé technické práci. Full-stack, od prvního pixelu po produkci.",
-    en: "I build fast, high-converting websites and web apps that turn visitors into customers — backed by clean, reliable engineering. Full-stack, from first pixel to production.",
+    cs: "Stavím **rychlé weby a webové aplikace s vysokou konverzí**, které mění návštěvníky v zákazníky — postavené na čisté a spolehlivé technické práci. Full-stack, *od prvního pixelu po produkci*.",
+    en: "I build **fast, high-converting websites and web apps** that turn visitors into customers — backed by clean, reliable engineering. Full-stack, *from first pixel to production*.",
   } as Localized,
 
   valueProps: [
@@ -58,16 +58,16 @@ export const site = {
   // About — each entry is its own paragraph
   bio: [
     {
-      cs: "Jsem Marek, full-stack softwarový inženýr s více než pěti lety zkušeností se stavbou produktů od prvního řádku kódu až po produkci. Pomáhám firmám měnit nápady v rychlé weby a webové aplikace s vysokou konverzí — software, který skvěle vypadá, rychle se načítá a hlavně přináší výsledky.",
-      en: "I'm Marek, a full-stack software engineer with more than five years spent building products from the first line of code to production. I help businesses turn ideas into fast, high-converting websites and web apps — software that looks sharp, loads quickly, and actually drives results.",
+      cs: "Jsem Marek, full-stack softwarový inženýr s **více než pěti lety zkušeností** se stavbou produktů od prvního řádku kódu až po produkci. Pomáhám firmám měnit nápady v **rychlé weby a webové aplikace s vysokou konverzí** — software, který *skvěle vypadá, rychle se načítá a hlavně přináší výsledky*.",
+      en: "I'm Marek, a full-stack software engineer with **more than five years** spent building products from the first line of code to production. I help businesses turn ideas into **fast, high-converting websites and web apps** — software that *looks sharp, loads quickly, and actually drives results*.",
     },
     {
-      cs: "Moje práce pokrývá celý stack: tvořím rozhraní v Next.js a Reactu, navrhuji API a služby v Go a Node.js a modeluji data v PostgreSQL a Prismě. Stejně dobře si poradím s architektonickými rozhodnutími i s pečlivým laděním detailů uživatelského rozhraní.",
-      en: "My work spans the whole stack: crafting interfaces in Next.js and React, designing APIs and services in Go and Node.js, and modeling data with PostgreSQL and Prisma. I'm equally comfortable owning architecture decisions and sweating the small details of a UI.",
+      cs: "Moje práce pokrývá **celý stack**: tvořím rozhraní v *Next.js a Reactu*, navrhuji API a služby v *Go a Node.js* a modeluji data v *PostgreSQL a Prismě*. Stejně dobře si poradím s **architektonickými rozhodnutími** i s pečlivým laděním detailů uživatelského rozhraní.",
+      en: "My work spans the **whole stack**: crafting interfaces in *Next.js and React*, designing APIs and services in *Go and Node.js*, and modeling data with *PostgreSQL and Prisma*. I'm equally comfortable owning **architecture decisions** and sweating the small details of a UI.",
     },
     {
-      cs: "Dnes vedu vývoj jako CEO ve společnosti Asuna Labs a tvořím software v Ideacomp s.r.o. Když zrovna nevydávám nové funkce, většinou se nořím do něčeho nového — naposledy do bezpečnosti a agentní AI.",
-      en: "Today I lead engineering as CEO of Asuna Labs and build software at Ideacomp s.r.o. When I'm not shipping, I'm usually digging into something new — most recently security and agentic AI.",
+      cs: "Dnes vedu vývoj jako **CEO ve společnosti Asuna Labs** a tvořím software v **Ideacomp s.r.o.** Když zrovna nevydávám nové funkce, většinou se nořím do něčeho nového — naposledy do *bezpečnosti a agentní AI*.",
+      en: "Today I lead engineering as **CEO of Asuna Labs** and build software at **Ideacomp s.r.o.** When I'm not shipping, I'm usually digging into something new — most recently *security and agentic AI*.",
     },
   ] as Localized[],
 
