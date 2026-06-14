@@ -1,0 +1,34 @@
+# Marek Paňko (JustFossa)
+
+> Full-stack software engineer in Ústí nad Labem, Czechia. Designs and builds fast, high-converting websites and web apps that bring businesses more customers — from first pixel to production.
+
+## About
+
+Marek Paňko is a full-stack software engineer with 5+ years of experience shipping production software. He helps businesses turn ideas into fast, high-converting websites and web applications. He owns projects end to end — design, frontend, backend, infrastructure — so clients work with one accountable person rather than an agency hand-off chain.
+
+- Location: Ústí nad Labem, Czechia (serves clients across Czechia and remotely)
+- Languages: Czech, English
+- Stack: Next.js, React, TypeScript, Go, Node.js, PostgreSQL, Tailwind CSS
+- Availability: takes a limited number of select client projects; replies within 24 hours
+- Business: registered in Czechia — IČO 23702524, DIČ CZ0709066886
+- Certifications: Google Cybersecurity; Certified Agentic AI Expert; ISC2 Candidate
+
+## Services
+
+- Business websites — fast, modern, mobile-first sites built to turn visitors into paying customers.
+- Custom web apps & software — booking/ordering systems, internal tools, dashboards, automation.
+- Redesign, speed & SEO — speeding up and refining existing sites to rank higher and convert more.
+
+## Selected results
+
+- ideacomp.cz — corporate website built in Next.js. PageSpeed (desktop): Performance 94, Accessibility 98, SEO 100; First Contentful Paint 0.4s.
+- asunalabs.com — software-studio website built in Next.js. PageSpeed (desktop): Performance 94; First Contentful Paint 0.5s.
+- 24NewsRO — AI-powered news aggregation platform (built at Asuna Labs), reaching 20,000+ monthly readers.
+
+## Contact
+
+- Website: https://www.mpanko.cz
+- Email: panko.marek@icloud.com
+- GitHub: https://github.com/justfossa
+- LinkedIn: https://www.linkedin.com/in/justfossa/
+- Free offer: a free website audit with concrete improvements, reply within 24 hours.

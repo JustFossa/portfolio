@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import { Fraunces, Newsreader, JetBrains_Mono } from "next/font/google";
+import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { BackgroundArt } from "@/components/BackgroundArt";
-import { site } from "@/data/site";
-import { defaultLocale } from "@/i18n/config";
-import "./globals.css";
+import { JsonLd } from "@/components/JsonLd";
+import { locales, isLocale, type Locale } from "@/i18n/config";
+import { buildMetadata } from "@/lib/seo";
+import "../globals.css";
 
 const fraunces = Fraunces({
   subsets: ["latin", "latin-ext"],
@@ -28,48 +30,46 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-// Czech-first metadata (default locale).
-export const metadata: Metadata = {
-  metadataBase: new URL("https://mpanko.cz"),
-  title: site.meta.title.cs,
-  description: site.meta.description.cs,
-  authors: [{ name: site.name }],
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: site.meta.title.cs,
-    description: site.meta.description.cs,
-    url: "https://mpanko.cz",
-    siteName: site.name,
-    type: "website",
-    locale: "cs_CZ",
-    alternateLocale: ["en_US"],
-  },
-  icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-  },
-};
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
-export default function RootLayout({
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  return buildMetadata(locale);
+}
+
+export default async function LocaleLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+  if (!isLocale(locale)) notFound();
+  const activeLocale: Locale = locale;
+
   return (
     <html
-      lang={defaultLocale}
+      lang={activeLocale}
       suppressHydrationWarning
       className={`${fraunces.variable} ${newsreader.variable} ${jetbrainsMono.variable}`}
     >
       <body className="font-body antialiased">
         <BackgroundArt />
         <ThemeProvider>
-          <LanguageProvider>
+          <LanguageProvider locale={activeLocale}>
             <ScrollProgress />
             {children}
           </LanguageProvider>
         </ThemeProvider>
+        <JsonLd locale={activeLocale} />
         <Analytics />
         <SpeedInsights />
       </body>

@@ -1,11 +1,25 @@
 "use client";
 
-import { locales, localeLabels } from "@/i18n/config";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { locales, localeLabels, isLocale, type Locale } from "@/i18n/config";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { ui } from "@/i18n/ui";
 
 export function LanguageSwitcher() {
-  const { locale, setLocale } = useLanguage();
+  const { locale } = useLanguage();
+  const pathname = usePathname();
+
+  // Swap the leading /<locale> segment, preserving the rest of the path.
+  const localizedPath = (target: Locale) => {
+    if (!pathname) return `/${target}`;
+    const segments = pathname.split("/");
+    if (segments[1] && isLocale(segments[1])) {
+      segments[1] = target;
+      return segments.join("/") || `/${target}`;
+    }
+    return `/${target}${pathname}`;
+  };
 
   return (
     <div
@@ -16,11 +30,11 @@ export function LanguageSwitcher() {
       {locales.map((l) => {
         const active = l === locale;
         return (
-          <button
+          <Link
             key={l}
-            type="button"
-            aria-pressed={active}
-            onClick={() => setLocale(l)}
+            href={localizedPath(l)}
+            hrefLang={l}
+            aria-current={active ? "true" : undefined}
             className={`px-2.5 py-1.5 uppercase tracking-widest transition-colors ${
               active
                 ? "bg-foreground text-background"
@@ -28,7 +42,7 @@ export function LanguageSwitcher() {
             }`}
           >
             {localeLabels[l]}
-          </button>
+          </Link>
         );
       })}
     </div>

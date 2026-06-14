@@ -50,6 +50,50 @@ export const site = {
     } as Localized,
   },
 
+  // Canonical production origin (no trailing slash).
+  url: "https://www.mpanko.cz",
+
+  // Local SEO / GEO — used for geo meta tags and LocalBusiness structured data.
+  geo: {
+    locality: "Ústí nad Labem",
+    region: "CZ-42", // Ústecký kraj (ISO 3166-2)
+    country: "CZ",
+    latitude: 50.6607,
+    longitude: 14.0323,
+  },
+
+  // SEO keywords per locale (kept concise and honest to intent).
+  keywords: {
+    cs: [
+      "tvorba webu",
+      "weby na míru",
+      "webové aplikace",
+      "Next.js vývojář",
+      "full-stack vývojář",
+      "softwarový inženýr",
+      "freelance vývojář",
+      "Ústí nad Labem",
+      "Česko",
+      "SEO",
+      "redesign webu",
+      "rychlé weby",
+    ],
+    en: [
+      "web development",
+      "custom websites",
+      "web apps",
+      "Next.js developer",
+      "full-stack developer",
+      "software engineer",
+      "freelance developer",
+      "Ústí nad Labem",
+      "Czechia",
+      "SEO",
+      "website redesign",
+      "high-converting websites",
+    ],
+  } as Record<"cs" | "en", string[]>,
+
   // Hero — outcome-led headline + personal intro
   tagline: {
     cs: "Weby a software, které vaší firmě přivedou víc zákazníků.",
