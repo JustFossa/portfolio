@@ -2,13 +2,29 @@ import type { Localized } from "@/i18n/config";
 
 export interface Project {
   name: string; // project names stay as-is
+  tagline?: Localized; // short label for featured projects
   description: Localized;
   tech: string[];
   demo?: string; // live, deployed site (add when redeployed)
   source?: string; // GitHub repository
+  featured?: boolean; // highlight at the top of the section
 }
 
 export const projects: Project[] = [
+  {
+    name: "Sentinel",
+    tagline: {
+      cs: "Autonomní AI agent pro analýzu výpadků",
+      en: "Autonomous incident root-cause AI agent",
+    },
+    description: {
+      cs: "Multiagentní AI systém, který diagnostikuje výpadky v produkci jako zkušený on-call inženýr — tvoří konkurenční hypotézy, sbírá důkazy z telemetrie a historie gitu, vylučuje příčiny, kriticky kontroluje vlastní úvahy a během několika sekund dodá kořenovou příčinu, opravu i postmortem. Postaveno na Microsoft Agent Framework s Azure a GitHub MCP.",
+      en: "A multi-agent AI system that diagnoses production incidents like a senior on-call engineer — forming competing hypotheses, gathering evidence from telemetry and git history, eliminating causes, critiquing its own reasoning, and delivering a root cause, fix, and postmortem in seconds. Built on the Microsoft Agent Framework with Azure & GitHub MCP.",
+    },
+    tech: ["Python", "Microsoft Agent Framework", "Azure", "MCP"],
+    source: "https://github.com/JustFossa/sentinel",
+    featured: true,
+  },
   {
     name: "iptools",
     description: {

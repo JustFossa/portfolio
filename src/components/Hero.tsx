@@ -1,9 +1,10 @@
 "use client";
 
-import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowDownRight } from "lucide-react";
 import { site } from "@/data/site";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { ui } from "@/i18n/ui";
+import { auditMailto } from "@/lib/contact";
 import { SocialIcon } from "@/components/SocialIcon";
 import { Reveal } from "@/components/Reveal";
 import { OrbArt, ScatterArt } from "@/components/AbstractArt";
@@ -12,6 +13,7 @@ import { renderRich } from "@/lib/rich-text";
 export function Hero() {
   const { t, locale } = useLanguage();
   const strings = ui[locale];
+  const auditHref = auditMailto(strings.audit.subject, strings.audit.mailBody);
 
   return (
     <section
@@ -39,29 +41,23 @@ export function Hero() {
 
         <Reveal delay={80}>
           <p className="font-mono text-sm uppercase tracking-[0.25em] text-muted">
-            {t(site.role)}
+            {t(site.role)} · {t(site.location)}
           </p>
         </Reveal>
 
         <Reveal delay={140}>
-          <h1 className="mt-4 max-w-4xl font-display text-5xl leading-[1.02] tracking-tight sm:text-6xl md:text-8xl">
-            {site.name}
+          <h1 className="mt-5 max-w-4xl font-display text-4xl leading-[1.05] tracking-tight sm:text-5xl md:text-7xl">
+            {t(site.tagline)}
           </h1>
         </Reveal>
 
-        <Reveal delay={220}>
-          <p className="mt-8 max-w-2xl font-display text-2xl leading-snug text-foreground md:text-3xl">
-            {t(site.tagline)}
-          </p>
-        </Reveal>
-
-        <Reveal delay={300}>
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
+        <Reveal delay={240}>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
             {renderRich(t(site.heroIntro))}
           </p>
         </Reveal>
 
-        <Reveal delay={360}>
+        <Reveal delay={320}>
           <ul className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-xs uppercase tracking-widest text-muted">
             {site.valueProps.map((prop, i) => (
               <li key={i} className="flex items-center gap-3">
@@ -74,21 +70,21 @@ export function Hero() {
           </ul>
         </Reveal>
 
-        <Reveal delay={420}>
+        <Reveal delay={400}>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <a
-              href="#projects"
-              className="group inline-flex items-center justify-center gap-2 bg-foreground px-6 py-3 font-mono text-xs uppercase tracking-widest text-background transition-all hover:gap-3 hover:opacity-85"
+              href={auditHref}
+              className="group inline-flex items-center justify-center gap-2 bg-foreground px-6 py-3.5 font-mono text-xs uppercase tracking-widest text-background transition-transform duration-200 hover:-translate-y-0.5"
             >
-              {strings.hero.viewWork}
-              <ArrowDownRight className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+              {strings.hero.audit}
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
             <a
-              href="#contact"
-              className="group inline-flex items-center justify-center gap-2 border border-border px-6 py-3 font-mono text-xs uppercase tracking-widest transition-colors hover:bg-foreground hover:text-background"
+              href="#projects"
+              className="group inline-flex items-center justify-center gap-2 border border-border px-6 py-3.5 font-mono text-xs uppercase tracking-widest transition-colors hover:bg-foreground hover:text-background"
             >
-              {strings.hero.getInTouch}
-              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              {strings.hero.seeWork}
+              <ArrowDownRight className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
             </a>
           </div>
         </Reveal>

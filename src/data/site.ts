@@ -38,15 +38,15 @@ export const site = {
     en: "Open to select freelance & collaboration",
   } as Localized,
 
-  // Hero
+  // Hero — outcome-led headline + personal intro
   tagline: {
-    cs: "Navrhuji a dodávám software od začátku do konce.",
-    en: "I design and ship software, end to end.",
+    cs: "Weby a software, které vaší firmě přivedou víc zákazníků.",
+    en: "Websites and software that bring your business more customers.",
   } as Localized,
 
   heroIntro: {
-    cs: "Stavím **rychlé weby a webové aplikace s vysokou konverzí**, které mění návštěvníky v zákazníky — postavené na čisté a spolehlivé technické práci. Full-stack, *od prvního pixelu po produkci*.",
-    en: "I build **fast, high-converting websites and web apps** that turn visitors into customers — backed by clean, reliable engineering. Full-stack, *from first pixel to production*.",
+    cs: "Jsem **Marek** — navrhuji a stavím **rychlé weby a aplikace na míru**, které mění návštěvníky v zákazníky. *Od prvního pixelu po produkci.*",
+    en: "I'm **Marek** — I design and build **fast, custom websites and web apps** that turn visitors into customers. *From first pixel to production.*",
   } as Localized,
 
   valueProps: [
@@ -139,9 +139,8 @@ export const site = {
 };
 
 export const navItems: { key: NavKey; href: string }[] = [
-  { key: "about", href: "#about" },
-  { key: "skills", href: "#skills" },
-  { key: "experience", href: "#experience" },
+  { key: "services", href: "#services" },
   { key: "projects", href: "#projects" },
+  { key: "about", href: "#about" },
   { key: "contact", href: "#contact" },
 ];
