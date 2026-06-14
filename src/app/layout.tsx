@@ -30,12 +30,18 @@ const jetbrainsMono = JetBrains_Mono({
 
 // Czech-first metadata (default locale).
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mpanko.cz"),
   title: site.meta.title.cs,
   description: site.meta.description.cs,
   authors: [{ name: site.name }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: site.meta.title.cs,
     description: site.meta.description.cs,
+    url: "https://mpanko.cz",
+    siteName: site.name,
     type: "website",
     locale: "cs_CZ",
     alternateLocale: ["en_US"],
