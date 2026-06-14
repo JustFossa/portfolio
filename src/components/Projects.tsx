@@ -29,7 +29,7 @@ export function Projects() {
   const rest = projects.filter((p) => !p.featured);
 
   return (
-    <Section id="projects" index="03" title={strings.sections.projects}>
+    <Section id="projects" index="04" title={strings.sections.projects}>
       {/* Featured / flagship project */}
       {featured.map((project) => (
         <Reveal key={project.name}>
@@ -99,6 +99,12 @@ export function Projects() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
+
+                {project.tagline && (
+                  <p className="mt-2 font-mono text-[0.7rem] uppercase tracking-widest text-muted">
+                    {t(project.tagline)}
+                  </p>
+                )}
 
                 <p className="mt-3 flex-1 leading-relaxed text-muted">
                   {t(project.description)}

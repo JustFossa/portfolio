@@ -12,7 +12,7 @@ export function Experience() {
   const strings = ui[locale];
 
   return (
-    <Section id="experience" index="06" title={strings.sections.experience}>
+    <Section id="experience" index="07" title={strings.sections.experience}>
       {/* Roles */}
       <div>
         {experience.map((role, i) => (

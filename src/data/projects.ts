@@ -2,7 +2,7 @@ import type { Localized } from "@/i18n/config";
 
 export interface Project {
   name: string; // project names stay as-is
-  tagline?: Localized; // short label for featured projects
+  tagline?: Localized; // short business-outcome label, shown on every card
   description: Localized;
   tech: string[];
   demo?: string; // live, deployed site (add when redeployed)
@@ -14,12 +14,12 @@ export const projects: Project[] = [
   {
     name: "Sentinel",
     tagline: {
-      cs: "Autonomní AI agent pro analýzu výpadků",
-      en: "Autonomous incident root-cause AI agent",
+      cs: "Méně výpadků, kratší prostoje — příčina nalezena za vteřiny",
+      en: "Less downtime, faster recovery — root cause in seconds",
     },
     description: {
-      cs: "Multiagentní AI systém, který diagnostikuje výpadky v produkci jako zkušený on-call inženýr — tvoří konkurenční hypotézy, sbírá důkazy z telemetrie a historie gitu, vylučuje příčiny, kriticky kontroluje vlastní úvahy a během několika sekund dodá kořenovou příčinu, opravu i postmortem. Postaveno na Microsoft Agent Framework s Azure a GitHub MCP.",
-      en: "A multi-agent AI system that diagnoses production incidents like a senior on-call engineer — forming competing hypotheses, gathering evidence from telemetry and git history, eliminating causes, critiquing its own reasoning, and delivering a root cause, fix, and postmortem in seconds. Built on the Microsoft Agent Framework with Azure & GitHub MCP.",
+      cs: "Když produkční systém spadne, každá minuta prostoje stojí peníze. Sentinel zkracuje hledání příčiny z hodin na vteřiny. Pod kapotou: multiagentní AI systém, který diagnostikuje výpadky jako zkušený on-call inženýr — tvoří konkurenční hypotézy, sbírá důkazy z telemetrie a historie gitu, vylučuje příčiny, kriticky kontroluje vlastní úvahy a dodá kořenovou příčinu, opravu i postmortem. Postaveno na Microsoft Agent Framework s Azure a GitHub MCP.",
+      en: "When a production system goes down, every minute of downtime costs money. Sentinel cuts root-cause hunting from hours to seconds. Under the hood: a multi-agent AI system that diagnoses incidents like a senior on-call engineer — forming competing hypotheses, gathering evidence from telemetry and git history, eliminating causes, critiquing its own reasoning, and delivering a root cause, fix, and postmortem. Built on the Microsoft Agent Framework with Azure & GitHub MCP.",
     },
     tech: ["Python", "Microsoft Agent Framework", "Azure", "MCP"],
     source: "https://github.com/JustFossa/sentinel",
@@ -27,27 +27,39 @@ export const projects: Project[] = [
   },
   {
     name: "iptools",
+    tagline: {
+      cs: "Rychlý nástroj, který šetří desítky kliknutí",
+      en: "A fast tool that saves dozens of clicks",
+    },
     description: {
-      cs: "Výkonná sada nástrojů pro zkoumání jakékoli IP adresy — geolokace, informace o síti a poskytovateli a další, v čistém a rychlém rozhraní.",
-      en: "A powerful toolkit for inspecting any IP address — geolocation, network and provider details, and more, in a clean and fast interface.",
+      cs: "Ukázka toho, jak stavím nástroje: čisté, rychlé rozhraní, kde uživatel získá odpověď na jedno hledání místo proklikávání pěti webů. Sada pro zkoumání jakékoli IP adresy — geolokace, informace o síti a poskytovateli a další.",
+      en: "A showcase of how I build tools: a clean, fast interface that answers a question in one search instead of clicking through five different sites. A toolkit for inspecting any IP address — geolocation, network and provider details, and more.",
     },
     tech: ["Next.js", "TypeScript", "Docker"],
     source: "https://github.com/JustFossa/iptools",
   },
   {
     name: "swiftnote",
+    tagline: {
+      cs: "Funkční produkt od nápadu po spuštění",
+      en: "A working product from idea to launch",
+    },
     description: {
-      cs: "Snadno vytvářejte a sdílejte samozničitelné poznámky — soukromé už z principu a pryč ve chvíli, kdy si je někdo přečte.",
-      en: "Create and share self-destructing notes with ease — private by design, and gone the moment they've been read.",
+      cs: "Kompletní produkt, který jsem navrhl, postavil a spustil sám — od myšlenky po nasazení. Snadno vytvářejte a sdílejte samozničitelné poznámky — soukromé už z principu a pryč ve chvíli, kdy si je někdo přečte.",
+      en: "A complete product I designed, built, and shipped end to end — from idea to deployment. Create and share self-destructing notes with ease — private by design, and gone the moment they've been read.",
     },
     tech: ["Next.js", "TypeScript", "Tailwind"],
     source: "https://github.com/JustFossa/swiftnote",
   },
   {
     name: "sponsor",
+    tagline: {
+      cs: "Odstraňuji tření, které brzdí konverze",
+      en: "Removing the friction that kills conversions",
+    },
     description: {
-      cs: "Jednoduchá, odlehčená a přívětivá alternativa ke GitHub Sponsors pro přijímání podpory od vaší komunity.",
-      en: "A simple, lightweight and inviting alternative to GitHub Sponsors for accepting support from your community.",
+      cs: "Lehká, přívětivá platební stránka. Stejný princip — odstranit tření — používám, aby váš web víc návštěvníků dovedl k nákupu nebo poptávce. Jednoduchá alternativa ke GitHub Sponsors pro přijímání podpory od vaší komunity.",
+      en: "A lightweight, inviting payment page. The same principle — remove friction — is what I use to get more of your visitors to buy or enquire. A simple alternative to GitHub Sponsors for accepting support from your community.",
     },
     tech: ["Next.js", "TypeScript", "Tailwind"],
     source: "https://github.com/JustFossa/sponsor",

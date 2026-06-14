@@ -17,7 +17,7 @@ export function Contact() {
   const auditHref = auditMailto(strings.audit.subject, strings.audit.mailBody);
 
   return (
-    <Section id="contact" index="07" title={strings.sections.contact}>
+    <Section id="contact" index="08" title={strings.sections.contact}>
       <div className="grid gap-12 md:grid-cols-[1.4fr_1fr] md:gap-16">
         <Reveal>
           <div>

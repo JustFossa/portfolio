@@ -11,7 +11,7 @@ export function About() {
   const { t, locale } = useLanguage();
 
   return (
-    <Section id="about" index="04" title={ui[locale].sections.about}>
+    <Section id="about" index="05" title={ui[locale].sections.about}>
       <div className="grid gap-12 md:grid-cols-[1fr_1.6fr] md:gap-16">
         <Reveal>
           <dl className="space-y-6">

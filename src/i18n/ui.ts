@@ -4,6 +4,7 @@ export type NavKey = "services" | "projects" | "about" | "contact";
 
 export type SectionKey =
   | "services"
+  | "caseStudies"
   | "process"
   | "projects"
   | "about"
@@ -69,6 +70,7 @@ export const ui: Record<Locale, UiStrings> = {
     },
     sections: {
       services: "Co pro vás udělám",
+      caseStudies: "Vybrané výsledky",
       process: "Jak to probíhá",
       projects: "Vybrané práce",
       about: "O mně",
@@ -130,6 +132,7 @@ export const ui: Record<Locale, UiStrings> = {
     },
     sections: {
       services: "What I build for you",
+      caseStudies: "Selected results",
       process: "How it works",
       projects: "Selected Work",
       about: "About",

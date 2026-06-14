@@ -10,7 +10,7 @@ export function Process() {
   const { t, locale } = useLanguage();
 
   return (
-    <Section id="process" index="02" title={ui[locale].sections.process}>
+    <Section id="process" index="03" title={ui[locale].sections.process}>
       <ol className="grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
         {steps.map((step, i) => (
           <Reveal key={i} delay={i * 80}>

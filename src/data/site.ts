@@ -34,9 +34,21 @@ export const site = {
   } as Localized,
 
   availability: {
-    cs: "Otevřený vybraným zakázkám a spolupráci",
-    en: "Open to select freelance & collaboration",
+    cs: "Beru omezený počet vybraných zakázek — ozvěte se",
+    en: "Taking a limited number of select projects — let's talk",
   } as Localized,
+
+  // Business identity — shown in the footer as a trust signal (CZ business register)
+  business: {
+    ico: "23702524",
+    dic: "CZ0709066886",
+    icoLabel: { cs: "IČO", en: "Company ID (IČO)" } as Localized,
+    dicLabel: { cs: "DIČ", en: "VAT ID (DIČ)" } as Localized,
+    trust: {
+      cs: "Bezpečnost na prvním místě — držitel certifikace Google Cybersecurity",
+      en: "Security-first — Google Cybersecurity certified",
+    } as Localized,
+  },
 
   // Hero — outcome-led headline + personal intro
   tagline: {
@@ -58,16 +70,16 @@ export const site = {
   // About — each entry is its own paragraph
   bio: [
     {
-      cs: "Jsem Marek, full-stack softwarový inženýr s **více než pěti lety zkušeností** se stavbou produktů od prvního řádku kódu až po produkci. Pomáhám firmám měnit nápady v **rychlé weby a webové aplikace s vysokou konverzí** — software, který *skvěle vypadá, rychle se načítá a hlavně přináší výsledky*.",
-      en: "I'm Marek, a full-stack software engineer with **more than five years** spent building products from the first line of code to production. I help businesses turn ideas into **fast, high-converting websites and web apps** — software that *looks sharp, loads quickly, and actually drives results*.",
+      cs: "Jsem Marek — full-stack vývojář s **více než pěti lety** stavění softwaru od prvního řádku kódu po produkci. Firmám pomáhám měnit nápady v **rychlé weby a aplikace s vysokou konverzí** — software, který *skvěle vypadá, rychle se načítá a hlavně přivádí zákazníky*.",
+      en: "I'm Marek — a full-stack developer with **5+ years** building software from the first line of code to production. I help businesses turn ideas into **fast, high-converting websites and apps** — software that *looks sharp, loads fast, and actually brings in customers*.",
     },
     {
-      cs: "Moje práce pokrývá **celý stack**: tvořím rozhraní v *Next.js a Reactu*, navrhuji API a služby v *Go a Node.js* a modeluji data v *PostgreSQL a Prismě*. Stejně dobře si poradím s **architektonickými rozhodnutími** i s pečlivým laděním detailů uživatelského rozhraní.",
-      en: "My work spans the **whole stack**: crafting interfaces in *Next.js and React*, designing APIs and services in *Go and Node.js*, and modeling data with *PostgreSQL and Prisma*. I'm equally comfortable owning **architecture decisions** and sweating the small details of a UI.",
+      cs: "Pracuji napříč **celým stackem**, takže váš projekt vede od začátku do konce jeden člověk — žádné předávání mezi agenturou a subdodavateli. Stavím rozhraní v *Next.js a Reactu*, navrhuji API v *Go a Node.js* a data ukládám v *PostgreSQL*. Vy řešíte byznys, techniku nechte na mně.",
+      en: "I work across the **whole stack**, so your project is owned end to end by one person — no hand-offs between an agency and subcontractors. I build interfaces in *Next.js and React*, design APIs in *Go and Node.js*, and model data in *PostgreSQL*. You focus on your business; leave the tech to me.",
     },
     {
-      cs: "Dnes vedu vývoj jako **CEO ve společnosti Asuna Labs** a tvořím software v **Ideacomp s.r.o.** Když zrovna nevydávám nové funkce, většinou se nořím do něčeho nového — naposledy do *bezpečnosti a agentní AI*.",
-      en: "Today I lead engineering as **CEO of Asuna Labs** and build software at **Ideacomp s.r.o.** When I'm not shipping, I'm usually digging into something new — most recently *security and agentic AI*.",
+      cs: "Software dnes stavím na denní bázi pro **Ideacomp s.r.o.** a vedu vývoj v **Asuna Labs** — takže přesně vím, jak dotáhnout produkt do konce a udržet ho v provozu. Vedle toho beru **omezený počet vybraných zakázek**, kde se klientovi věnuji osobně a od začátku do konce. Není to vedlejšák — je to práce, kterou dělám rád.",
+      en: "Today I build software day to day for **Ideacomp s.r.o.** and lead engineering at **Asuna Labs** — so I know exactly how to take a product all the way to launch and keep it running. Alongside that I take on a **limited number of select client projects**, where you get my personal attention from start to finish. This isn't a side gig — it's work I genuinely care about.",
     },
   ] as Localized[],
 
@@ -84,17 +96,17 @@ export const site = {
       },
     },
     {
-      label: { cs: "Aktuálně", en: "Currently" },
+      label: { cs: "Dostupnost", en: "Availability" },
       value: {
-        cs: "CEO @ Asuna Labs · Vývojář @ Ideacomp",
-        en: "CEO @ Asuna Labs · Dev @ Ideacomp",
+        cs: "Beru omezený počet zakázek · odpověď do 24 h",
+        en: "Taking a limited number of projects · 24h reply",
       },
     },
     {
       label: { cs: "Praxe", en: "Experience" },
       value: {
-        cs: "5+ let dodávání softwaru",
-        en: "5+ years shipping software",
+        cs: "5+ let dodávání softwaru do produkce",
+        en: "5+ years shipping software to production",
       },
     },
   ] as Fact[],

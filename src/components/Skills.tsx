@@ -10,7 +10,7 @@ export function Skills() {
   const { t, locale } = useLanguage();
 
   return (
-    <Section id="skills" index="05" title={ui[locale].sections.skills}>
+    <Section id="skills" index="06" title={ui[locale].sections.skills}>
       <div className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-5">
         {skills.map((group, i) => (
           <Reveal key={i} delay={i * 80}>
